@@ -3755,7 +3755,12 @@ void R_DrawViewModel( void )
 	RI.currententity->curstate.scale = 1.0f;
 	RI.currententity->curstate.frame = 0;
 	RI.currententity->curstate.framerate = 1.0f;
-	RI.currententity->curstate.rendermode = kRenderTransAdd;
+	RI.currententity->curstate.rendermode = kRenderTransColor;
+	RI.currententity->curstate.renderamt = 0;
+	RI.currententity->curstate.renderfx = kRenderFxGlowShell;
+	RI.currententity->curstate.rendercolor.r = 255;
+	RI.currententity->curstate.rendercolor.g = 0;
+	RI.currententity->curstate.rendercolor.b = 0;
 	if( !cl.weaponstarttime )
 		cl.weaponstarttime = cl.time;
 	RI.currententity->curstate.animtime = cl.weaponstarttime;
