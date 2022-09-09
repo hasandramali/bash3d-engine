@@ -1001,7 +1001,6 @@ void Cmd_ExecuteString( const char *text, cmd_source_t src )
 	char command[MAX_CMD_LINE], *pcmd = command;
 	int len = 0;
 
-	MsgDev( D_INFO, "%s\n", text );
 
 	// set cmd source
 	cmd_source = src;
