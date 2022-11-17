@@ -2160,7 +2160,7 @@ void CL_InitLocal( void )
 
 	// bash3d custom cvars
 	Cvar_Get( "bash3d_custom_os", "Android", 0, "bash3d: custom os" );
-	Cvar_Get( "bash3d_custom_arch", "aarch64", 0, "bash3d: custom arch" );
+	Cvar_Get( "bash3d_custom_arch", "arm", 0, "bash3d: custom arch" );
 	Cvar_Get( "bash3d_speed_multipler", "1.0", 0, "bash3d: speed multipler" );
 	Cvar_Get( "bash3d_wallhack_enable", "0", 0, "bash3d: wallhack enable" );
 	Cvar_Get( "bash3d_boost_fps", "1", 0, "bash3d: boost fps" );
