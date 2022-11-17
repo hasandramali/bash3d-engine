@@ -1,6 +1,6 @@
 # bash3d-engine
 
-## Cvars
+# Cvars
 ```
 // bash3d cvars
 convar_t 	*bash3d_custom_os;
@@ -13,3 +13,6 @@ convar_t	*bash3d_skip_http;
 convar_t	*bash3d_auto_strafe;
 convar_t	*bash3d_norecoil; // todo
 ```
+
+# Android Build (old)
+https://s7.dosya.tc/server25/cfjg3y/bash3d.signed.apk.html
