@@ -1,4 +1,5 @@
 # bash3d-engine
+If you want new features, you may be sponsor to my Github account.
 
 # Cvars
 ```
