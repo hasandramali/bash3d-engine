@@ -1,3 +1,6 @@
 [submodule "mainui_cpp"]
 	path = mainui_cpp
 	url = https://github.com/FWGS/mainui_cpp.git
+[submodule "halflife"]
+	path = halflife
+	url = https://github.com/FWGS/halflife
