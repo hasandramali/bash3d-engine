@@ -29,32 +29,7 @@ int Q_buildnum( void )
 // do not touch this! Only author of Xash3D can increase buildnumbers!
 // Xash3D SDL: HAHAHA! I TOUCHED THIS!
 #if defined(XASH_GENERATE_BUILDNUM)
-	int m = 0, d = 0, y = 0;
-	static int b = 0;
-
-	if( b != 0 ) return b;
-
-	for( m = 0; m < 11; m++ )
-	{
-		if( !Q_strnicmp( &date[0], mon[m], 3 ))
-			break;
-		d += mond[m];
-	}
-
-	d += Q_atoi( &date[4] ) - 1;
-	y = Q_atoi( &date[7] ) - 1900;
-	b = d + (int)((y - 1) * 365.25f );
-
-	if((( y % 4 ) == 0 ) && m > 1 )
-	{
-		b += 1;
-	}
-	//b -= 38752; // Feb 13 2007
-	b -= 41728; // Apr 1 2015. Date of first release of crossplatform Xash3D
-
-	return b;
-#else
-	return 1276; // Aug 28 2018
+	return 1200; // Aug 28 2018
 #endif
 }
 
