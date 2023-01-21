@@ -121,7 +121,7 @@ const char *Q_buildcommit( void )
 #elif defined(XASH_RELEASE) // don't check it elsewhere to avoid random bugs
 	return "release";
 #else
-	return "notset";
+	return "release";
 #endif
 }
 
