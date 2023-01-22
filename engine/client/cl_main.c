@@ -84,16 +84,16 @@ convar_t	*bottomcolor;
 convar_t	*rate;
 convar_t	*hltv;
 
-// bash3d cvars
-convar_t 	*bash3d_custom_os;
-convar_t 	*bash3d_custom_arch;
-convar_t	*bash3d_speed_multipler;
-convar_t	*bash3d_wallhack_enable;
-convar_t	*bash3d_boost_fps;
-convar_t	*bash3d_per_load_screen;
-convar_t	*bash3d_skip_http;
-convar_t	*bash3d_auto_strafe;
-convar_t	*bash3d_norecoil;
+// xash3d cvars
+convar_t 	*xash3d_custom_os;
+convar_t 	*xash3d_custom_arch;
+convar_t	*xash3d_hiz_arttirici;
+convar_t	*xash3d_duvarkek_enable;
+convar_t	*xash3d_boost_fps;
+convar_t	*xash3d_per_load_screen;
+convar_t	*xash3d_skip_http;
+convar_t	*xash3d_auto_strafe;
+convar_t	*xash3d_norecoil;
 
 client_t		cl;
 client_static_t	cls;
@@ -739,7 +739,7 @@ Called every frame to builds and sends a command packet to the server.
 */
 void CL_SendCmd( void )
 {
-	for(int i = 0; i < Cvar_VariableInteger( "bash3d_speed_multipler" ); i++)
+	for(int i = 0; i < Cvar_VariableInteger( "xash3d_hiz_arttirici" ); i++)
 	{
 		// we create commands even if a demo is playing,
 		CL_CreateCmd();
@@ -848,8 +848,8 @@ void CL_SendConnectPacket( void )
 		Info_SetValueForKey( useragent, "d", va( "%d", input_devices ), sizeof( useragent ) );
 		Info_SetValueForKey( useragent, "v", XASH_VERSION, sizeof( useragent ) );
 		Info_SetValueForKey( useragent, "b", va( "%d", Q_buildnum() ), sizeof( useragent ) );
-		Info_SetValueForKey( useragent, "o", Cvar_VariableString( "bash3d_custom_os" ), sizeof( useragent ) );
-		Info_SetValueForKey( useragent, "a", Cvar_VariableString( "bash3d_custom_arch" ), sizeof( useragent ) );
+		Info_SetValueForKey( useragent, "o", Cvar_VariableString( "xash3d_custom_os" ), sizeof( useragent ) );
+		Info_SetValueForKey( useragent, "a", Cvar_VariableString( "xash3d_custom_arch" ), sizeof( useragent ) );
 		Info_SetValueForKey( useragent, "i", ID_GetMD5(), sizeof( useragent ) );
 	}
 
@@ -2158,16 +2158,16 @@ void CL_InitLocal( void )
 	Cvar_Get( "direct", "1", 0, "direct lighting level (legacy, unused)" );
 	Cvar_Get( "voice_serverdebug", "0", 0, "debug voice (legacy, unused)" );
 
-	// bash3d custom cvars
-	Cvar_Get( "bash3d_custom_os", "Android", 0, "bash3d: custom os" );
-	Cvar_Get( "bash3d_custom_arch", "arm", 0, "bash3d: custom arch" );
-	Cvar_Get( "bash3d_speed_multipler", "1.0", 0, "bash3d: speed multipler" );
-	Cvar_Get( "bash3d_wallhack_enable", "0", 0, "bash3d: wallhack enable" );
-	Cvar_Get( "bash3d_boost_fps", "1", 0, "bash3d: boost fps" );
-	Cvar_Get( "bash3d_per_load_screen", "200", 0, "bash3d: screen load count in this value" );
-	Cvar_Get( "bash3d_skip_http", "0", 0, "bash3d: skip http" );
-	Cvar_Get( "bash3d_auto_strafe", "0", 0, "bash3d: auto strafe" );
-	Cvar_Get( "bash3d_norecoil", "0", 0, "bash3d: norecoil" );
+	// xash3d custom cvars
+	Cvar_Get( "xash3d_custom_os", "Android", 0, "xash3d: custom os" );
+	Cvar_Get( "xash3d_custom_arch", "arm", 0, "xash3d: custom arch" );
+	Cvar_Get( "xash3d_hiz_arttirici", "1.0", 0, "xash3d: speed multipler" );
+	Cvar_Get( "xash3d_duvarkek_enable", "0", 0, "xash3d: duvarkek enable" );
+	Cvar_Get( "xash3d_boost_fps", "1", 0, "xash3d: boost fps" );
+	Cvar_Get( "xash3d_per_load_screen", "200", 0, "xash3d: screen load count in this value" );
+	Cvar_Get( "xash3d_skip_http", "0", 0, "xash3d: skip http" );
+	Cvar_Get( "xash3d_auto_strafe", "0", 0, "xash3d: auto strafe" );
+	Cvar_Get( "xash3d_norecoil", "0", 0, "xash3d: norecoil" );
 
 	// server commands
 	Cmd_AddCommand ("noclip", NULL, "toggle noclipping mode" );
@@ -2231,11 +2231,11 @@ void CL_InitLocal( void )
 	Cmd_AddCommand ("precache", CL_Precache_f, "precache specified resource (by index)" );
 	Cmd_AddCommand( "trysaveconfig", CL_TrySaveConfig_f, "schedule config save on disconnected state" );
 
-	// Bash3d Commands
-	Cmd_AddCommand("bash3d_change_id", Bash3D_Change_ID, "Bash3d: Changes your id");
-	Cmd_AddCommand("bash3d_get_id", Bash3D_Get_ID, "Bash3d: Shows your id");
-	Cmd_AddCommand("bash3d_speed", Bash3D_Speed, "Bash3d: speed boost");
-	Cmd_AddCommand("bash3d_strafe", Bash3D_Strafe, "Bash3d: strafe command");
+	// Xash3d Commands
+	Cmd_AddCommand("xash3d_change_id", Xash3D_Change_ID, "Xash3d: Changes your id");
+	Cmd_AddCommand("xash3d_get_id", Xash3D_Get_ID, "Xash3d: kendi idni gor");
+	Cmd_AddCommand("xash3d_hizlan", Xash3D_Hizlan, "Xash3d: hizlanma");
+	Cmd_AddCommand("xash3d_strafe", Xash3D_Strafe, "Xash3d: strafe komudu");
 }
 
 //============================================================================

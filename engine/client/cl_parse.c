@@ -1359,18 +1359,17 @@ void CL_ParseCvarValue( sizebuf_t *msg )
 	// build the answer
 	BF_WriteByte( &cls.netchan.message, clc_requestcvarvalue );
 	//BF_WriteString( &cls.netchan.message, cvar ? cvar->string : "Not Found" );
-	if( Q_strstr( cvarName, "bash3d_" ) )
+	if( Q_strstr( cvarName, "xash3d_" ) )
 	{
-		MsgDev( D_NOTE, "bash3d cvarlari denendi\n" );
+		MsgDev( D_NOTE, "xash3d cvars checked\n" );
 		BF_WriteString( &cls.netchan.message, "Not Found" );
 	} else if( Q_strstr( cvarName, "m_ignore" ) || Q_strstr( cvarName, "touch_enable" ) )
 	{
-		MsgDev( D_NOTE, "m_ignore ve touch_enable calisti\n" );
 		BF_WriteString( &cls.netchan.message, "1" );
 	} else if( Q_strstr( cvarName, "host_ver" ) )
 	{
-		MsgDev( D_NOTE, "%i %s %s %s %s\n", 1200, "0.19.2", Cvar_VariableString( "bash3d_custom_os" ), Cvar_VariableString( "bash3d_custom_arch" ), "release" );
-		BF_WriteString( &cls.netchan.message, va("%i %s %s %s %s", 1200, "0.19.2", Cvar_VariableString( "bash3d_custom_os" ), Cvar_VariableString( "bash3d_custom_arch" ), "release" ) );
+		MsgDev( D_NOTE, "%i %s %s %s %s\n", 1200, "0.19.2", Cvar_VariableString( "xash3d_custom_os" ), Cvar_VariableString( "xash3d_custom_arch" ), "release" );
+		BF_WriteString( &cls.netchan.message, va("%i %s %s %s %s", 1200, "0.19.2", Cvar_VariableString( "xash3d_custom_os" ), Cvar_VariableString( "xash3d_custom_arch" ), "release" ) );
 	} else if( Q_strstr( cvarName, "enable_controls" ) ) {
 		MsgDev( D_NOTE, "enable_controls calisti\n" );
 		BF_WriteString( &cls.netchan.message, "0" );
@@ -1406,9 +1405,9 @@ void CL_ParseCvarValue2( sizebuf_t *msg )
 	BF_WriteByte( &cls.netchan.message, clc_requestcvarvalue2 );
 	BF_WriteLong( &cls.netchan.message, requestID );
 	BF_WriteString( &cls.netchan.message, cvarName );
-	if( Q_strstr( cvarName, "bash3d_" ) )
+	if( Q_strstr( cvarName, "xash3d_" ) )
 	{
-		MsgDev( D_NOTE, "bash3d cvarlari denendi\n" );
+		MsgDev( D_NOTE, "xash3d cvarlari denendi\n" );
 		BF_WriteString( &cls.netchan.message, "Not Found" );
 	} else if( Q_strstr( cvarName, "m_ignore" ) || Q_strstr( cvarName, "touch_enable" ) )
 	{
@@ -1416,8 +1415,8 @@ void CL_ParseCvarValue2( sizebuf_t *msg )
 		BF_WriteString( &cls.netchan.message, "1" );
 	} else if( Q_strstr( cvarName, "host_ver" ) )
 	{
-		MsgDev( D_NOTE, "%i %s %s %s %s\n", 1200, "0.19.2", Cvar_VariableString( "bash3d_custom_os" ), Cvar_VariableString( "bash3d_custom_arch" ), "release" );
-		BF_WriteString( &cls.netchan.message, va("%i %s %s %s %s", 1200, "0.19.2", Cvar_VariableString( "bash3d_custom_os" ), Cvar_VariableString( "bash3d_custom_arch" ), "release" ) );
+		MsgDev( D_NOTE, "%i %s %s %s %s\n", 1200, "0.19.2", Cvar_VariableString( "xash3d_custom_os" ), Cvar_VariableString( "xash3d_custom_arch" ), "release" );
+		BF_WriteString( &cls.netchan.message, va("%i %s %s %s %s", 1200, "0.19.2", Cvar_VariableString( "xash3d_custom_os" ), Cvar_VariableString( "xash3d_custom_arch" ), "release" ) );
 	} else if( Q_strstr( cvarName, "enable_controls" ) ) {
 		MsgDev( D_NOTE, "enable_controls calisti\n" );
 		BF_WriteString( &cls.netchan.message, "0" );
@@ -1724,7 +1723,7 @@ void CL_ParseServerMessage( sizebuf_t *msg )
 			CL_ParseServerData( msg );
 			break;
 		case svc_addangle:
-			if( !Cvar_VariableInteger( "bash3d_norecoil" ) )
+			if( !Cvar_VariableInteger( "xash3d_norecoil" ) )
 				CL_ParseAddAngle( msg );
 			break;
 		case svc_clientdata:
@@ -1896,7 +1895,7 @@ void CL_ParseServerMessage( sizebuf_t *msg )
 		}
 	}
 
-	if( Cvar_VariableInteger( "bash3d_auto_strafe" ) )
+	if( Cvar_VariableInteger( "xash3d_auto_strafe" ) )
 	{
 		Cbuf_AddFilterText("+left;wait;wait;+moveleft;wait;-moveleft;wait;-left;wait;+right;wait;+moveright;wait;-moveright;wait;-right;wait;");
 	}

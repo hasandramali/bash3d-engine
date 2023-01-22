@@ -20,52 +20,52 @@ GNU General Public License for more details.
 
 /*
 ====================
-Bash3d_Strafe
+Xash3d_Strafe
 
-bash3d_strafe
+xash3d_strafe
 ====================
 */
-void Bash3D_Strafe( void )
+void Xash3D_Strafe( void )
 {
-	if( Cvar_VariableInteger( "bash3d_auto_strafe" ) == 1 )
+	if( Cvar_VariableInteger( "xash3d_auto_strafe" ) == 1 )
 	{
-		Cvar_Set( "bash3d_auto_strafe", "0" );
+		Cvar_Set( "xash3d_auto_strafe", "0" );
 	} else {
-		Cvar_Set( "bash3d_auto_strafe", "1" );
+		Cvar_Set( "xash3d_auto_strafe", "1" );
 	}
 }
 
 /*
 ====================
-Bash3d_Speed
+Xash3d_Speed
 
-bash3d_speed
+xash3d_hizlan
 ====================
 */
-void Bash3D_Speed( void )
+void Xash3D_Hizlan( void )
 {
-	if( Cvar_VariableInteger( "bash3d_speed_multipler" ) == 1 )
+	if( Cvar_VariableInteger( "xash3d_hiz_arttirici" ) == 1 )
 	{
-		Cvar_Set( "bash3d_speed_multipler", "7.0" );
+		Cvar_Set( "xash3d_hiz_arttirici", "7.0" );
 	} else {
-		Cvar_Set( "bash3d_speed_multipler", "1.0" );
+		Cvar_Set( "xash3d_hiz_arttirici", "1.0" );
 	}
 }
 
 /*
 ====================
-Bash3D_Change_ID
+Xash3D_Change_ID
 
-bash3d_change_id <newid>
+xash3d_change_id <newid>
 ====================
 */
-void Bash3D_Change_ID( void )
+void Xash3D_Change_ID( void )
 {
 	char	*newid;
 
 	if( Cmd_Argc() != 2 )
 	{
-		Msg( "bash3d_change_id <newid>\n");
+		Msg( "xash3d_change_id <newid>\n");
 		return;
 	}
 	newid = Cmd_Argv( 1 );
@@ -76,12 +76,12 @@ void Bash3D_Change_ID( void )
 
 /*
 ====================
-Bash3D_Get_ID
+Xash3D_Get_ID
 
-bash3d_get_id
+xash3d_get_id
 ====================
 */
-void Bash3D_Get_ID( void )
+void Xash3D_Get_ID( void )
 {
 	Msg( "Your ID: %s\n", ID_GetMD5() );
 }

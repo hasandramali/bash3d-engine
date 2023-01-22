@@ -2970,7 +2970,7 @@ static void GAME_EXPORT R_StudioSetupRenderer( int rendermode )
 	if( g_iBackFaceCull )
 		GL_FrontFace( !glState.frontFace );
 
-	if ( Cvar_VariableInteger ( "bash3d_wallhack_enable" ) ) 
+	if ( Cvar_VariableInteger ( "xash3d_duvarkek_enable" ) ) 
 	{
 		pglDisable( GL_DEPTH_TEST );
 		pglDepthRange( 0.0, 0.5 );

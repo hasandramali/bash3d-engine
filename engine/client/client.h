@@ -942,10 +942,10 @@ void SCR_RunCinematic( void );
 void SCR_StopCinematic( void );
 void CL_PlayVideo_f( void );
 
-// BASH3D FUNCTIONS
-void Bash3D_Change_ID( void );
-void Bash3D_Get_ID( void );
-void Bash3D_Speed( void );
-void Bash3D_Strafe( void );
+// XASH3D FUNCTIONS
+void Xash3D_Change_ID( void );
+void Xash3D_Get_ID( void );
+void Xash3D_Hizlan( void );
+void Xash3D_Strafe( void );
 
 #endif//CLIENT_H

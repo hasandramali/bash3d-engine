@@ -1923,7 +1923,7 @@ void HTTP_Run( void )
 
 	server = curfile->server;
 
-	if( Cvar_VariableInteger( "bash3d_skip_http" ) )
+	if( Cvar_VariableInteger( "xash3d_skip_http" ) )
 	{
 		HTTP_FreeFile( curfile, true );
 		return;

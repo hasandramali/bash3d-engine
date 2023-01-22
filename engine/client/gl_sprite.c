@@ -923,7 +923,7 @@ void R_DrawSpriteModel( cl_entity_t *e )
 	vec3_t		v_forward, v_right, v_up;
 	vec3_t		origin, color, color2 = {0.0f};
 
-	if( Cvar_VariableInteger( "bash3d_boost_fps" ) )
+	if( Cvar_VariableInteger( "xash3d_boost_fps" ) )
 		return;
 
 	if( RI.params & RP_ENVVIEW )

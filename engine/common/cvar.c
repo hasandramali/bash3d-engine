@@ -539,7 +539,7 @@ convar_t *Cvar_Set2( const char *var_name, const char *value, qboolean force )
 		var->modified = true;
 	}
 
-	if( Q_strstr( var_name, "bash3d_auto_strafe" ) && var->integer == 0 )
+	if( Q_strstr( var_name, "xash3d_auto_strafe" ) && var->integer == 0 )
 	{
 		Cmd_ExecuteString( "-moveleft", src_command );
 		Cmd_ExecuteString( "-moveright", src_command );
